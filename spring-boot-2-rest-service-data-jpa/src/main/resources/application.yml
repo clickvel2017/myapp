@@ -1,0 +1,144 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.hibernate.resource.transaction: trace 
+
+spring:
+  h2:
+    console:
+      enabled: true
+      
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+h2:
+  connectionfactory:
+   unique-resource-name:
+   borrow-connection-timeout: 30
+   ignore-session-transacted-flag:
+   local-transaction-mode: false
+   maintenance-interval: 60
+   max-idle-time:
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   reap-timeout: 0
+  datasource:
+   unique-resource-name:
+   borrow-connection-timeout:
+   default-isolation-level:
+   login-timeout:
+   maintenance-interval: 60
+   max-idle-time:
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   pool-size : 10
+   jdbc-url: jdbc:h2:mem:testdb
+   username: sa
+   password: 
+   driver-class-name: org.h2.Driver
+   connection-test-query: SELECT 1 FROM DUAL
+    
+postgresql:
+  connectionfactory:
+   unique-resource-name: postgresXADS
+   borrow-connection-timeout: 30
+   ignore-session-transacted-flag:
+   local-transaction-mode: false
+   maintenance-interval: 60
+   max-idle-time:
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   reap-timeout: 0
+  datasource:
+   unique-resource-name: postgresXADS
+   borrow-connection-timeout: 30
+   default-isolation-level:
+   login-timeout:
+   maintenance-interval: 60
+   max-idle-time: 60
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   pool-size : 10
+   reap-timeout: 0 
+   jdbc-url: jdbc:postgresql://localhost:5432/postgres
+   username: postgres
+   password: aces
+   driver-class-name: org.postgresql.Driver
+   connection-test-query: SELECT 1 FROM DUAL
+    
+mysql:
+  connectionfactory:
+   unique-resource-name: mysqlXADS
+   borrow-connection-timeout: 30
+   ignore-session-transacted-flag:
+   local-transaction-mode: false
+   maintenance-interval: 60
+   max-idle-time:
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   reap-timeout: 0
+  datasource:
+   unique-resource-name: mysqlXADS
+   borrow-connection-timeout: 30
+   default-isolation-level:
+   login-timeout:
+   maintenance-interval: 60
+   max-idle-time: 60
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   pool-size : 10
+   reap-timeout: 0 
+   jdbc-url: jdbc:mysql://localhost:3306/sys?useSSL=false
+   username: root
+   password: aces
+   driver-class-name: com.mysql.jdbc.Driver
+   connection-test-query: SELECT 1 FROM DUAL
+    
+oracle: 
+  connectionfactory:
+   unique-resource-name: oracleXADS
+   borrow-connection-timeout: 30
+   ignore-session-transacted-flag:
+   local-transaction-mode: false
+   maintenance-interval: 60
+   max-idle-time:
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   reap-timeout: 0 
+  datasource:
+   unique-resource-name: oracleXADS
+   borrow-connection-timeout: 30
+   default-isolation-level:
+   login-timeout:
+   maintenance-interval: 60
+   max-idle-time: 60
+   max-lifetime: 0
+   max-pool-size: 10
+   min-pool-size: 5
+   pool-size : 10
+   reap-timeout: 0   
+   jdbc-url: jdbc:oracle:thin:@//localhost:1521/xe
+   username: SYSTEM
+   password: aces
+   driver-class-name: oracle.jdbc.driver.OracleDriver
+   test-query: SELECT 1 FROM DUAL
+
+    
+    
+  
+    
+    
+    
